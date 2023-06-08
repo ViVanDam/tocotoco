@@ -1,0 +1,181 @@
+/* banner */
+.banner {
+  /* position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0; */
+}
+
+.hot-products {
+  height: 300px;
+  position: relative;
+}
+
+.phase-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.phase-title .phase-name {
+  color: #d2a451;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.phase-title h2 {
+  font-size: 34px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.hot-products-title {
+  margin: 50px 0 30px;
+}
+
+.product-list {
+  display: flex;
+  column-gap: 2%;
+  row-gap: 24px;
+}
+
+.product-item {
+  /* border: 1px solid black; */
+  width: 23.5%;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-item:hover .product-content {
+  top: 0;
+}
+
+.product-item:hover img {
+  scale: 1.2;
+}
+
+.product-item img {
+  width: 100%;
+  margin: 0;
+  transition: all linear 0.3s;
+}
+
+.wrapper-product-content {
+  height: 126px;
+  background-color: #f5f5f5;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-content {
+  height: 126px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  transition: all linear 0.3s;
+}
+
+.product-content .product-name {
+  font-weight: bold;
+}
+
+.product-content .price {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.new-product-price,
+.old-product-price {
+  padding: 0 10px;
+}
+
+.new-product-price {
+  color: #8a733f;
+  font-weight: 600;
+}
+
+.old-product-price {
+  text-decoration: line-through;
+  color: #bebebe;
+}
+
+.product-item .new-label {
+  position: absolute;
+  padding: 7px 4px;
+  top: 20px;
+  left: 20px;
+  border-radius: 50%;
+  transform: rotate(-20deg);
+  background-color: #d2a451;
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  opacity: 0.7;
+}
+
+.product-item .discount-label {
+  position: absolute;
+  padding: 7px 4px;
+  top: 20px;
+  right: 20px;
+  border-radius: 50%;
+  background-color: #000;
+  text-align: center;
+  color: #d2a451;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.view-all-products {
+  width: 150px;
+  text-align: center;
+  margin: 40px auto;
+}
+
+.aboutus {
+  background-image: url("../img/banner/banner_about_us.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 740px;
+}
+
+.aboutus-content {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+}
+
+.story {
+  padding: 42% 0 0 0;
+}
+
+.story p,
+.nhuong-quyen-title p {
+  text-align: center;
+  padding: 0 40px;
+}
+
+.nhuong-quyen {
+  height: 520px;
+  border: 4px solid #d2a451;
+  margin-top: 20px;
+}
+
+.nhuong-quyen-content {
+  padding: 8% 10%;
+}
+
+.view-nhuong-quyen {
+  width: 150px;
+  text-align: center;
+  margin: 0 auto;
+}
