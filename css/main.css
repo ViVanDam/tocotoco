@@ -129,3 +129,69 @@ header .btn-search {
 .btn-a-link:hover a {
   color: #d2a451;
 }
+
+body {
+  background-color: #fbfbfb;
+}
+
+.wrapper-header {
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header img {
+  margin-left: 30px;
+  cursor: pointer;
+}
+
+.back-home-page span {
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #d2a451;
+  width: 400px;
+  height: 30px;
+  border-radius: 6px;
+}
+
+.search-box span {
+  cursor: pointer;
+  padding-left: 10px;
+}
+
+.search-box span:hover {
+  color: #d2a451;
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  height: 26px;
+  padding-left: 10px;
+  line-height: 26px;
+}
+
+.back-home-page span {
+  color: #fff;
+}
+
+.acc-logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 100px;
+  margin-left: 0;
+  cursor: pointer;
+}

@@ -1,0 +1,139 @@
+body {
+  z-index: -9999;
+}
+
+.wrapper-login {
+  background-image: url("../img/north_background_login_desktop.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  position: relative;
+  z-index: 111;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+}
+
+.login-form-modal {
+  width: 500px;
+  height: 600px;
+  background-color: #fff;
+  position: absolute;
+  z-index: 1000;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  background-image: url(../img/register_banner_mobile.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+}
+
+.login-form {
+  margin-top: 70px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+.login-form.signup-form {
+  margin-top: 60px;
+}
+
+.login-form img {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.login-form input {
+  width: 96%;
+  border: none;
+  border-bottom: 1px solid #d2a451;
+  padding: 10px 0;
+  margin-bottom: 2px;
+  outline: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.login-form input:focus {
+  background-color: #fff;
+}
+
+.login-form a.forget-pass {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  color: #d2a451;
+  text-align: right;
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+.login-form a.forget-pass:hover,
+.back-to-home a:hover,
+.no-acc a:hover {
+  text-decoration: underline;
+}
+
+.login-form input[type="submit"] {
+  width: 200px;
+  padding: 10px 0;
+  border-radius: 10px;
+  border: none;
+  color: #fff;
+  background-color: #d2a451;
+  margin: 0 auto;
+  cursor: pointer;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+/* 
+.login-form button:hover {
+  opacity: 0.8;
+} */
+
+.login-form .no-acc {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.no-acc p {
+  margin-bottom: 0;
+}
+
+.no-acc a {
+  color: #d2a451;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.login-form .back-to-home {
+  padding: 10px;
+  text-align: center;
+}
+
+.back-to-home a {
+  text-decoration: none;
+}

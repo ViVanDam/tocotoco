@@ -1,6 +1,7 @@
 $(document).ready(function () {
   // --------------- handle order form modal event --------------
   function handleOrderFormModal() {
+    // get product list
     var productItems = document.querySelectorAll(".product-list .product-item");
     // Get the modal
     var modal = $("#order-form");
@@ -39,9 +40,11 @@ $(document).ready(function () {
         </div>`;
         $(".order-modal .modal-product-content").html(productItemContent);
 
-        const decreaseBtn = document.querySelector(".order-quantity .minus");
-        const increaseBtn = document.querySelector(".order-quantity .plus");
-        const quantityInput = document.querySelector(
+        $(".cart .order-item .no-item").css("display", "none");
+
+        const modalMinus = document.querySelector(".order-quantity .minus");
+        const modalPlus = document.querySelector(".order-quantity .plus");
+        const modalQuantity = document.querySelector(
           ".order-quantity .quantity"
         );
 
@@ -49,25 +52,23 @@ $(document).ready(function () {
         newPriceNum = parseInt(newPriceNum) * 1000;
         var orderPrice = newPriceNum;
 
-        decreaseBtn.addEventListener("click", function () {
-          const currentValue = parseInt(quantityInput.value);
+        modalMinus.addEventListener("click", function () {
+          const currentValue = parseInt(modalQuantity.value);
           if (currentValue > 1) {
-            quantityInput.value = currentValue - 1;
+            modalQuantity.value = currentValue - 1;
             orderPrice = orderPrice - newPriceNum;
             $(".order .order-price").text(orderPrice.toLocaleString());
           }
         });
 
-        increaseBtn.addEventListener("click", function () {
-          const currentValue = parseInt(quantityInput.value);
-          quantityInput.value = currentValue + 1;
+        modalPlus.addEventListener("click", function () {
+          const currentValue = parseInt(modalQuantity.value);
+          modalQuantity.value = currentValue + 1;
           orderPrice = orderPrice + newPriceNum;
           $(".order .order-price").text(orderPrice.toLocaleString());
         });
 
         $(".order-modal .order").click(function (e) {
-          e.preventDefault();
-
           var orderItem = `<div class="cart-item col col-md-12">
                     <h6 class="cart-item-name">${productName}<span>(L)</span></h6>
                     <p class="cart-item-note">
@@ -77,17 +78,17 @@ $(document).ready(function () {
                       <span class="item-price">${newPriceNum.toLocaleString()}</span>
                       <span>đ</span>
                       <span>x</span>
-                      <span class="show-quantity">${quantityInput.value}</span>
+                      <span class="show-quantity">${modalQuantity.value}</span>
                       <span>=</span>
                       <span class="calc-price">${(
-                        quantityInput.value * newPriceNum
+                        modalQuantity.value * newPriceNum
                       ).toLocaleString()}</span>
                       <span>đ</span>
                     </div>
                     <div class="edit-quantity">
                       <span class="minus">-</span>
                       <input class="quantity" readonly value="${
-                        quantityInput.value
+                        modalQuantity.value
                       }" max="10" min="1"></input>
                       <span class="plus">+</span>
                     </div>
@@ -111,16 +112,16 @@ $(document).ready(function () {
           var totalQuantity = 0;
           var totalPrice = 0;
           // get total quantity value of all order item
-          const quantitys = document.querySelectorAll(
-            ".cart-item .edit-quantity .quantity"
+          const quantities = document.querySelectorAll(
+            ".edit-quantity .quantity"
           );
           // get total price value of all order item
           const prices = document.querySelectorAll(
-            ".cart-item .cart-item-price .calc-price"
+            ".cart-item-price .calc-price"
           );
 
           // loop all quantity of order item to get all quantity value
-          quantitys.forEach((quantity) => {
+          quantities.forEach((quantity) => {
             const quantityValue = parseInt($(quantity).val());
             totalQuantity = totalQuantity + quantityValue;
           });
@@ -133,7 +134,7 @@ $(document).ready(function () {
           // set value for total of quantity cart and price cart
           $(totalCartQuantity).text(totalQuantity);
           $(totalCartPrice).text(totalPrice.toLocaleString());
-          handleCart();
+          handleCart(orderProducts);
         });
       });
 
@@ -141,13 +142,13 @@ $(document).ready(function () {
       var closeBtn = $(".order-modal .modal-content #cls");
       $(closeBtn).click(function (e) {
         $(modal).css("display", "none");
-        $(quantityInput).val(1);
+        $(modalQuantity).val(1);
       });
       // When the user clicks anywhere outside of the modal, close it
       $(window).click(function (e) {
         if (e.target == modal) {
           $(modal).css("display", "none");
-          $(quantityInput).val(1);
+          $(modalQuantity).val(1);
         }
       });
     });
@@ -159,7 +160,7 @@ $(document).ready(function () {
     //   }
     // });
 
-    // increaseBtn.addEventListener("click", function () {
+    // cartItemPlus.addEventListener("click", function () {
     //   const currentValue = parseInt(quantityInput.value);
     //   quantityInput.value = currentValue + 1;
     // });
@@ -169,12 +170,12 @@ $(document).ready(function () {
 
   // ---------------- handle cart event -----------------
 
-  function handleCart() {
+  function handleCart(orderProducts) {
     // edit each order item in the cart
-    // get cart
-    const totalCart = document.querySelector(".cart .order-price");
     // get all order cart item
-    const orderProducts = document.querySelectorAll(".cart-item");
+    // const orderProducts = document.querySelectorAll(".cart-item");
+    // get the total price of cart
+    const totalCart = document.querySelector(".cart .order-price");
     // get the total quantity of cart
     const totalCartQuantity = totalCart.querySelector(
       ".cart .order-price .total-quantity"
@@ -183,46 +184,29 @@ $(document).ready(function () {
     const totalCartPrice = totalCart.querySelector(
       ".cart .order-price .total-price"
     );
+    // get delete all button
+    const delAllBtn = document.querySelector(".cart .cart-title .del-all");
+
+    $(delAllBtn).click(function (e) {
+      orderProducts.forEach((item) => {
+        item.remove();
+        $(totalCartQuantity).text(0);
+        $(totalCartPrice).text(0);
+        $(".cart .order-item .no-item").css("display", "block");
+      });
+    });
 
     var totalQuantity = parseInt($(totalCartQuantity).text());
     var totalPrice = parseInt($(totalCartPrice).text()) * 1000;
-    // // get total quantity value of all order item
-    // const quantitys = document.querySelectorAll(
-    //   ".cart-item .edit-quantity .quantity"
-    // );
-    // // get total price value of all order item
-    // const prices = document.querySelectorAll(
-    //   ".cart-item .cart-item-price .calc-price"
-    // );
-    // const isEmpty = (orderProducts) =>
-    //   Array.isArray(orderProducts) && !orderProducts.length;
-    // if (!isEmpty) {
-    //   $(".cart .order-item .no-item").classAdd("no-item-cart");
-    //   jqass;
 
-    //   // loop all quantity of order item to get all quantity value
-    //   quantitys.forEach((quantity) => {
-    //     const quantityValue = parseInt($(quantity).text());
-    //     totalQuantity = totalQuantity + quantityValue;
-    //   });
-    //   // loop all price of order item to get all price value
-    //   prices.forEach((price) => {
-    //     const priceValue = parseInt($(price).text());
-    //     totalPrice = totalPrice + priceValue;
-    //   });
-
-    //   // set value for total of quantity cart and price cart
-    //   $(totalCartQuantity).text(totalQuantity.toLocaleString());
-    //   $(totalCartPrice).text(totalPrice.toLocaleString());
-    // }
     // loop all order cart item
     orderProducts.forEach((product) => {
       // get btn minus of order cart item
-      const decreaseBtn = product.querySelector(
+      const cartItemMinus = product.querySelector(
         ".cart-item .edit-quantity .minus"
       );
       // get btn plus of order cart item
-      const increaseBtn = product.querySelector(
+      const cartItemPlus = product.querySelector(
         ".cart-item .edit-quantity .plus"
       );
       // get input quantity of order cart item
@@ -233,7 +217,7 @@ $(document).ready(function () {
       const showQuantity = product.querySelector(
         ".cart-item .cart-item-price .show-quantity"
       );
-      // get caculation price of order item
+      // get calculated price of order item
       const calcPrice = product.querySelector(
         ".cart-item .cart-item-price .calc-price"
       );
@@ -242,13 +226,14 @@ $(document).ready(function () {
         ".cart-item .cart-item-price .item-price"
       );
       // handle click minus btn event
-      decreaseBtn.addEventListener("click", function () {
+      cartItemMinus.addEventListener("click", function () {
         const currentValue = parseInt(quantityInput.value);
-        // if (currentValue != quantityInput.value) {
-        //   $(showQuantity).text(quantityInput.value);
-        // }
+        if (currentValue != quantityInput.value) {
+          $(showQuantity).text(quantityInput.value);
+        }
         if (currentValue >= 1) {
           quantityInput.value = currentValue - 1;
+          currentValue--;
 
           const calcValue =
             parseInt(quantityInput.value) *
@@ -267,9 +252,10 @@ $(document).ready(function () {
         }
       });
       // handle click plus btn event
-      increaseBtn.addEventListener("click", function () {
+      cartItemPlus.addEventListener("click", function () {
         const currentValue = parseInt(quantityInput.value);
         quantityInput.value = currentValue + 1;
+        currentValue++;
         $(showQuantity).text(quantityInput.value);
         const calcValue =
           parseInt(quantityInput.value) * parseInt($(itemPrice).text()) * 1000;
@@ -284,4 +270,5 @@ $(document).ready(function () {
       });
     });
   }
+  // handleCart();
 });
