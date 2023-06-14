@@ -1,3 +1,13 @@
+.wrapper-header {
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .product-btn {
   padding: 4px 20px;
   border-radius: 6px;

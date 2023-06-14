@@ -134,16 +134,6 @@ body {
   background-color: #fbfbfb;
 }
 
-.wrapper-header {
-  padding: 0;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 header img {
   margin-left: 30px;
   cursor: pointer;

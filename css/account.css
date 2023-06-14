@@ -1,3 +1,13 @@
+.wrapper-header {
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .login-btn {
   margin-right: 30px;
 }
