@@ -13,10 +13,7 @@ $(document).ready(function () {
 
   // -------------- handle loged in website ----------------
   var loginAcc = JSON.parse(localStorage.getItem("accLogin"));
-  console.log(loginAcc);
   if (loginAcc) {
-    console.log(loginAcc.phone);
-    console.log(loginAcc.pass);
     $(".login-btn").css("display", "none");
     $(".acc-logo").css("display", "block");
   } else {
@@ -37,4 +34,14 @@ $(document).ready(function () {
   gotopage(".nav-link.products-page");
   gotopage(".logo");
   gotopage(".back-home-page");
+
+  $(window).resize(function () {
+    if ($(window).width() < 400) {
+      $(".container-fluid")
+        .removeClass("container-fluid")
+        .addClass("container");
+    } else {
+      $(".container").removeClass("container").addClass("container-fluid");
+    }
+  });
 });

@@ -68,11 +68,81 @@ $(document).ready(function () {
           $(".order .order-price").text(orderPrice.toLocaleString());
         });
 
+        // get form
+        var form = document.querySelector(".order-modal form");
+        // Lấy tất cả các phần tử "input" trong "choise"
+        var toppings = form.querySelectorAll('.choise input[type="checkbox"]');
+        var totalToppingPrice = 0;
+        // Lặp qua tất cả các phần tử "input"
+        for (var i = 0; i < toppings.length; i++) {
+          // Thêm sự kiện "change" cho mỗi phần tử "input"
+          toppings[i].addEventListener("change", function () {
+            // Kiểm tra xem phần tử "input" đã được chọn chưa
+            if (this.checked) {
+              // nếu đã được chọn
+              var toppingPrice =
+                this.parentNode.querySelector(".topping-price").textContent;
+              // Bước 1: Xóa ký tự '+' và 'đ' ra khỏi chuỗi
+              toppingPrice = toppingPrice.replace(/[+đ]/g, "");
+              toppingPrice = parseInt(toppingPrice);
+              toppingPrice = toppingPrice * 1000;
+              totalToppingPrice += toppingPrice;
+              orderPrice += toppingPrice;
+            } else {
+              // Nếu chưa đc chọn
+              var toppingPrice =
+                this.parentNode.querySelector(".topping-price").textContent;
+              // Bước 1: Xóa ký tự '+' và 'đ' ra khỏi chuỗi
+              toppingPrice = toppingPrice.replace(/[+đ]/g, "");
+              toppingPrice = parseInt(toppingPrice);
+              toppingPrice = toppingPrice * 1000;
+              totalToppingPrice -= toppingPrice;
+              orderPrice -= toppingPrice;
+            }
+          });
+        }
+
         $(".order-modal .order").click(function (e) {
+          var modalNote = "";
+          // get form
+          var form = document.querySelector(".order-modal form");
+          // get all item radio in form
+          var size = form.querySelector(
+            ".choise input[name='size']:checked"
+          ).value;
+
+          var radios = form.querySelectorAll('input[type="radio"]');
+          var radioValues = "";
+
+          // loop all input radio
+          for (var i = 0; i < radios.length; i++) {
+            // check which input is checked
+            if (radios[i].checked) {
+              // add value of radio is checked into radioValues
+              radioValues = radioValues + radios[i].value + ", ";
+            }
+          }
+
+          // Lấy tất cả các phần tử "input" trong "choise"
+          var toppings = form.querySelectorAll(
+            '.choise input[type="checkbox"]'
+          );
+          var toppingText = "";
+          // loop all input radio
+          for (var i = 0; i < toppings.length; i++) {
+            // check which input is checked
+            if (toppings[i].checked) {
+              // add value of radio is checked into radioValues
+              toppingText = toppingText + toppings[i].value + ", ";
+            }
+          }
+
+          modalNote = modalNote + toppingText + radioValues;
+          modalNote = modalNote.replace(/(S|M|L),/g, "");
           var orderItem = `<div class="cart-item col col-md-12">
-                    <h6 class="cart-item-name">${productName}<span>(L)</span></h6>
+                    <h6 class="cart-item-name">${productName}<span>(${size})</span></h6>
                     <p class="cart-item-note">
-                      Thêm trân châu Baby, 50% đường, 50% đá
+                      ${modalNote}
                     </p>
                     <div class="cart-item-price">
                       <span class="item-price">${newPriceNum.toLocaleString()}</span>
@@ -81,7 +151,8 @@ $(document).ready(function () {
                       <span class="show-quantity">${modalQuantity.value}</span>
                       <span>=</span>
                       <span class="calc-price">${(
-                        modalQuantity.value * newPriceNum
+                        modalQuantity.value *
+                        (newPriceNum + totalToppingPrice)
                       ).toLocaleString()}</span>
                       <span>đ</span>
                     </div>
@@ -143,12 +214,25 @@ $(document).ready(function () {
       $(closeBtn).click(function (e) {
         $(modal).css("display", "none");
         $(modalQuantity).val(1);
+        var toppings = modal.querySelectorAll(
+          '.choise input[type="checkbox"]:checked'
+        );
+
+        toppings.forEach((topping) => {
+          $(topping).prop("checked", false);
+        });
       });
       // When the user clicks anywhere outside of the modal, close it
       $(window).click(function (e) {
         if (e.target == modal) {
           $(modal).css("display", "none");
           $(modalQuantity).val(1);
+          var toppings = modal.querySelectorAll(
+            '.choise input[type="checkbox"]:checked'
+          );
+          toppings.forEach((topping) => {
+            $(topping).prop("checked", false);
+          });
         }
       });
     });
@@ -233,7 +317,6 @@ $(document).ready(function () {
         }
         if (currentValue >= 1) {
           quantityInput.value = currentValue - 1;
-          currentValue--;
 
           const calcValue =
             parseInt(quantityInput.value) *
@@ -255,7 +338,6 @@ $(document).ready(function () {
       cartItemPlus.addEventListener("click", function () {
         const currentValue = parseInt(quantityInput.value);
         quantityInput.value = currentValue + 1;
-        currentValue++;
         $(showQuantity).text(quantityInput.value);
         const calcValue =
           parseInt(quantityInput.value) * parseInt($(itemPrice).text()) * 1000;
@@ -271,4 +353,19 @@ $(document).ready(function () {
     });
   }
   // handleCart();
+
+  // handle click menu btn
+  $(".categories-btn .btn-cate-menu .btn-menu").click(function (e) {
+    e.preventDefault();
+    $(".btn-cate-menu .btn-menu").css("display", "none");
+    $(".btn-cate-menu .x-btn").css("display", "block");
+    $(".categories-btn .category-list").css("display", "block");
+  });
+
+  $(".categories-btn .btn-cate-menu .x-btn").click(function (e) {
+    e.preventDefault();
+    $(".btn-cate-menu .x-btn").css("display", "none");
+    $(".btn-cate-menu .btn-menu").css("display", "block");
+    $(".categories-btn .category-list").css("display", "none");
+  });
 });

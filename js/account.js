@@ -1,10 +1,15 @@
 $(document).ready(function () {
+  // get accLogin
+  var accLogin = JSON.parse(localStorage.getItem("accLogin"));
+  var phone = accLogin.phone;
+  $(".info-item .phone input").attr("value", phone);
   //   handle event when click logout button
   var logoutBtn = document.querySelector("a#logout");
   $(logoutBtn).click(function (e) {
     e.preventDefault();
     localStorage.removeItem("accLogin");
-    location.reload();
+    window.location = "../login.html";
+    return;
   });
 
   //   handle show content by title item in the left window list

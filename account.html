@@ -71,7 +71,7 @@
           <img src="img/logo/logo_icon.png" alt="" class="acc-logo" />
         </div>
       </header>
-      <div class="container mt-md-2 d-flex mb-md-4">
+      <div class="container mt-md-3 d-flex mb-md-4">
         <div class="categories col col-md-3">
           <ul class="list-group category-list">
             <li class="list-group-item">
@@ -109,7 +109,67 @@
           </ul>
         </div>
         <div class="main-content col col-md-9">
-          <div class="my-info content-item" id="ttct"></div>
+          <div class="my-info content-item" id="ttct">
+            <div class="bg-img"></div>
+            <div class="info">
+              <div class="avt">
+                <img class="avt-img" src="./img/logo/logo_icon.png" alt="" />
+                <span class="material-symbols-outlined"> photo_camera </span>
+              </div>
+              <hr />
+              <div class="info-item">
+                <div class="mem-code">
+                  <label for="mem-code">Mã thành viên</label>
+                  <input type="text" name="mem-code" readonly />
+                </div>
+                <div class="point">
+                  <label for="point">Điểm</label>
+                  <input type="text" name="point" readonly />
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="name">
+                  <label for="name">Họ và tên</label>
+                  <input type="text" name="name" />
+                </div>
+                <div class="birthday">
+                  <label for="birthday">Ngày sinh</label>
+                  <input type="datetime" name="birthday" />
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="phone">
+                  <label for="phone">Số điện thoại</label>
+                  <input type="text" name="phone" readonly />
+                </div>
+                <div class="email">
+                  <label for="email">Email</label>
+                  <input type="text" name="email" />
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="gender">
+                  <label for="gender">Giới tính</label>
+                  <select name="gender" id="">
+                    <option value="male">Nam</option>
+                    <option value="female">Nữ</option>
+                    <option value="other">Khác</option>
+                  </select>
+                </div>
+                <div class="address">
+                  <label for="address">Địa chỉ mặc định</label>
+                  <input
+                    type="text"
+                    name="address"
+                    id=""
+                    placeholder="Địa chỉ nhận hàng ..."
+                  />
+                </div>
+                <input type="file" id="upload-avt" accept="image/*" hidden />
+              </div>
+            </div>
+            <div class="save-btn btn-a-link">Lưu thay đổi</div>
+          </div>
           <div class="my-order content-item" id="dhct"></div>
           <div class="discount content-item" id="mkm"></div>
         </div>

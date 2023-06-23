@@ -56,11 +56,15 @@
   <body>
     <div class="container-fluid wrapper-header">
       <header>
-        <img class="logo" src="./img/logo/Logo-ngang-01.png" alt="" />
-        <div class="back-home-page">
+        <img
+          class="logo d-none d-md-block"
+          src="./img/logo/Logo-ngang-01.png"
+          alt=""
+        />
+        <div class="back-home-page d-none d-md-block">
           <span class="material-symbols-outlined"> west </span>
         </div>
-        <div class="search-box">
+        <div class="search-box flex-md-grow-1">
           <span class="material-symbols-outlined"> search </span>
           <input
             type="search"
@@ -75,7 +79,7 @@
         </div>
       </header>
       <div class="container mt-md-2 d-flex mb-md-4">
-        <div class="categories col col-md-3">
+        <div class="categories col col-md-3 col-lg-3">
           <ul class="list-group category-list">
             <li class="list-group-item"><h4>Danh Mục</h4></li>
             <li class="list-group-item">
@@ -98,7 +102,7 @@
             </li>
           </ul>
         </div>
-        <div class="products col col-md-6">
+        <div class="products col col-md-5 col-lg-6 col-sm-11">
           <div class="wrapper-product-list">
             <div class="accordion" id="accordionPanelsStayOpenExample">
               <div class="accordion-item">
@@ -557,7 +561,7 @@
             </div>
           </div>
         </div>
-        <div class="cart col col-md-3">
+        <div class="cart col col-lg-3 col-md-3 col-sm-12">
           <div class="col col-md-12 cart-title">
             <h4>Giỏ Hàng Của Tôi</h4>
             <button class="del-all">Xóa tất cả</button>
@@ -598,8 +602,24 @@
                   </div>
                   <div class="choise">
                     <div class="choise-item">
-                      <input type="radio" name="type" id="typecold" checked />
+                      <input
+                        type="radio"
+                        name="type"
+                        id="typecold"
+                        checked
+                        value="Loại lạnh"
+                      />
                       <label for="typecold">Lạnh</label>
+                    </div>
+                    <div class="choise-item">
+                      <input
+                        type="radio"
+                        name="type"
+                        id="typehot"
+                        value="Loại nóng"
+                        checked
+                      />
+                      <label for="typehot">Nóng</label>
                     </div>
                   </div>
                 </div>
@@ -612,15 +632,21 @@
                   </div>
                   <div class="choise">
                     <div class="choise-item">
-                      <input type="radio" name="size" id="sizeL" checked />
+                      <input
+                        type="radio"
+                        name="size"
+                        id="sizeL"
+                        checked
+                        value="L"
+                      />
                       <label for="sizeL">Size L</label>
                     </div>
                     <div class="choise-item">
-                      <input type="radio" name="size" id="sizeM" />
+                      <input type="radio" name="size" id="sizeM" value="M" />
                       <label for="sizeM">Size M</label>
                     </div>
                     <div class="choise-item">
-                      <input type="radio" name="size" id="sizeS" />
+                      <input type="radio" name="size" id="sizeS" value="S" />
                       <label for="sizeS">Size S</label>
                     </div>
                   </div>
@@ -634,19 +660,40 @@
                   </div>
                   <div class="choise">
                     <div class="choise-item">
-                      <input type="radio" name="sugar" id="sugar100" checked />
+                      <input
+                        type="radio"
+                        name="sugar"
+                        id="sugar100"
+                        value="100% đường"
+                        checked
+                      />
                       <label for="sugar100">100%</label>
                     </div>
                     <div class="choise-item">
-                      <input type="radio" name="sugar" id="sugar70" />
+                      <input
+                        type="radio"
+                        name="sugar"
+                        id="sugar70"
+                        value="70% đường"
+                      />
                       <label for="sugar70">70%</label>
                     </div>
                     <div class="choise-item">
-                      <input type="radio" name="sugar" id="sugar30" />
+                      <input
+                        type="radio"
+                        name="sugar"
+                        id="sugar30"
+                        value="30% đường"
+                      />
                       <label for="sugar30">30%</label>
                     </div>
                     <div class="choise-item">
-                      <input type="radio" name="sugar" id="sugarno" />
+                      <input
+                        type="radio"
+                        name="sugar"
+                        id="sugarno"
+                        value="Không đường"
+                      />
                       <label for="sugarno">Không đường</label>
                     </div>
                   </div>
@@ -660,19 +707,40 @@
                   </div>
                   <div class="choise">
                     <div class="choise-item">
-                      <input type="radio" name="ice" id="iceheatup" />
+                      <input
+                        type="radio"
+                        name="ice"
+                        id="iceheatup"
+                        value="Làm nóng"
+                      />
                       <label for="iceheatup">Làm nóng</label>
                     </div>
                     <div class="choise-item">
-                      <input type="radio" name="ice" id="ice100" />
+                      <input
+                        type="radio"
+                        name="ice"
+                        id="ice100"
+                        value="100% đá"
+                      />
                       <label for="ice100">100%</label>
                     </div>
                     <div class="choise-item">
-                      <input type="radio" name="ice" id="ice50" checked />
+                      <input
+                        type="radio"
+                        name="ice"
+                        id="ice50"
+                        checked
+                        value="50% đá"
+                      />
                       <label for="ice50">50%</label>
                     </div>
                     <div class="choise-item">
-                      <input type="radio" name="ice" id="iceno" />
+                      <input
+                        type="radio"
+                        name="ice"
+                        id="iceno"
+                        value="Không đá"
+                      />
                       <label for="iceno">Không đá</label>
                     </div>
                   </div>
@@ -686,37 +754,72 @@
                   </div>
                   <div class="choise">
                     <div class="choise-item">
-                      <input type="checkbox" name="topping" id="topping1" />
+                      <input
+                        type="checkbox"
+                        name="topping"
+                        id="topping1"
+                        value="Thêm trân châu sương mai"
+                      />
                       <label for="topping1">Thêm trân châu sương mai</label>
                       <div class="topping-price">+11,000đ</div>
                     </div>
                     <div class="choise-item">
-                      <input type="checkbox" name="topping" id="topping2" />
+                      <input
+                        type="checkbox"
+                        name="topping"
+                        id="topping2"
+                        value="Thêm trân châu Machiato"
+                      />
                       <label for="topping2">Thêm trân châu Machiato</label>
                       <div class="topping-price">+10,000đ</div>
                     </div>
                     <div class="choise-item">
-                      <input type="checkbox" name="topping" id="topping3" />
+                      <input
+                        type="checkbox"
+                        name="topping"
+                        id="topping3"
+                        value="Thêm trân châu Baby"
+                      />
                       <label for="topping3">Thêm trân châu Baby</label>
                       <div class="topping-price">+9,000đ</div>
                     </div>
                     <div class="choise-item">
-                      <input type="checkbox" name="topping" id="topping4" />
+                      <input
+                        type="checkbox"
+                        name="topping"
+                        id="topping4"
+                        value="Thêm trân châu dâu tây"
+                      />
                       <label for="topping4">Thêm trân châu dâu tây</label>
                       <div class="topping-price">+8,000đ</div>
                     </div>
                     <div class="choise-item">
-                      <input type="checkbox" name="topping" id="topping5" />
+                      <input
+                        type="checkbox"
+                        name="topping"
+                        id="topping5"
+                        value="Thêm trân châu dừa"
+                      />
                       <label for="topping5">Thêm trân châu dừa</label>
                       <div class="topping-price">+7,000đ</div>
                     </div>
                     <div class="choise-item">
-                      <input type="checkbox" name="topping" id="topping6" />
+                      <input
+                        type="checkbox"
+                        name="topping"
+                        id="topping6"
+                        value="Thêm trân châu hoàng kim"
+                      />
                       <label for="topping6">Thêm trân châu hoàng kim</label>
                       <div class="topping-price">+6,000đ</div>
                     </div>
                     <div class="choise-item">
-                      <input type="checkbox" name="topping" id="topping7" />
+                      <input
+                        type="checkbox"
+                        name="topping"
+                        id="topping7"
+                        value="Thêm trân châu băng tuyết"
+                      />
                       <label for="topping7">Thêm trân châu băng tuyết</label>
                       <div class="topping-price">+5,000đ</div>
                     </div>
@@ -726,6 +829,40 @@
             </form>
           </div>
         </div>
+      </div>
+      <div class="categories-btn col col-sm-3">
+        <div class="btn-cate-menu">
+          <span
+            class="material-symbols-outlined btn-menu"
+            style="color: #d2a451"
+          >
+            menu
+          </span>
+          <span class="material-symbols-outlined x-btn" style="color: #d2a451">
+            close
+          </span>
+        </div>
+        <ul class="list-group category-list">
+          <li class="list-group-item"><h4>Danh Mục</h4></li>
+          <li class="list-group-item">
+            <a href="#mnb">Món nổi bật</a><span>10</span>
+          </li>
+          <li class="list-group-item">
+            <a href="#imt">Instant Milk Tea</a><span>10</span>
+          </li>
+          <li class="list-group-item">
+            <a href="#ts">Trà Sữa</a><span>10</span>
+          </li>
+          <li class="list-group-item">
+            <a href="">Fresh Fruit Tea</a><span>10</span>
+          </li>
+          <li class="list-group-item">
+            <a href="">Machiato Cream Cheese</a><span>10</span>
+          </li>
+          <li class="list-group-item">
+            <a href="">Sữa Chua Dẻo</a><span>10</span>
+          </li>
+        </ul>
       </div>
     </div>
   </body>

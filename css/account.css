@@ -59,9 +59,9 @@ li a span {
 }
 
 .my-info {
-  background-color: #d2a451;
   width: 100%;
   display: block;
+  position: relative;
 }
 
 .my-order {
@@ -74,4 +74,106 @@ li a span {
   background-color: red;
   width: 100%;
   display: none;
+}
+
+.my-info .bg-img {
+  width: 100%;
+  height: 160px;
+  background-image: url("../img/background-account.png");
+  background-repeat: no-repeat;
+  background-size: 100% 500px;
+  background-position-y: center;
+}
+
+.my-info .info {
+  width: 96%;
+  position: absolute;
+  background-color: #fff;
+  top: 140px;
+  left: 2%;
+  height: 70%;
+  border-radius: 10px;
+  box-shadow: 1px 1px 6px 2px rgba(0, 0, 0, 0.125);
+  z-index: 1;
+  padding: 0 10px;
+}
+
+.info .avt {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: 40%;
+  transform: translateY(-50%);
+  background-color: #d2a451;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  padding: 3px;
+}
+
+.avt .avt-img {
+  width: 100%;
+  box-shadow: 2px 2px 9px 2px rgba(0, 0, 0, 0.125);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.avt span {
+  position: absolute;
+  top: 75%;
+  left: 75%;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 3.5px 3px;
+  box-shadow: 1px 1px 6px 2px rgba(0, 0, 0, 0.125);
+  color: #d2a451;
+  cursor: pointer;
+}
+
+.info hr {
+  margin-top: 100px;
+  color: #ddd;
+}
+
+.info-item {
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+  height: 70px;
+  display: flex;
+}
+
+.info-item div {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.info-item label {
+  color: #d2a451;
+  font-size: 14px;
+  font-weight: 500;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+.info-item input,
+.info-item select {
+  width: 90%;
+  margin: 0 auto;
+  height: 30px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.save-btn {
+  width: 200px;
+  position: absolute;
+  bottom: 0;
+  left: 40%;
+  text-align: center;
+  border-radius: 10px;
+  z-index: 40;
 }

@@ -462,3 +462,473 @@ footer .title-ft {
   flex-direction: row;
   color: #fff;
 }
+
+/* Responsive */
+
+@media (min-width: 992px) and (max-width: 1199.9px) {
+  header .logo {
+    width: 150px;
+    margin-left: 5px;
+  }
+
+  header nav {
+    background-color: #282828;
+  }
+
+  header .btn-search {
+    margin: 0 auto;
+  }
+
+  .carousel {
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 991.98px) {
+  header.row > * {
+    padding-right: 0;
+  }
+
+  header .logo {
+    width: 150px;
+    margin-left: 5px;
+  }
+
+  header nav {
+    background-color: #282828;
+  }
+
+  nav .header-nav {
+    padding: 0;
+  }
+
+  header .btn-search {
+    margin: 0 auto;
+  }
+
+  .carousel {
+    padding-right: 0;
+  }
+
+  .hot-products {
+    height: fit-content;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  .hot-products-title {
+    height: fit-content;
+    margin: 50px 0 30px;
+  }
+
+  .hot-products-title img {
+    width: 40%;
+  }
+
+  .phase-title .phase-name {
+    font-size: 20px;
+  }
+
+  .product-list {
+    max-width: 750px;
+    margin: 0 auto;
+  }
+
+  .product-item .new-label {
+    padding: 5px 2px;
+    top: 10px;
+    left: 10px;
+  }
+
+  .product-item .discount-label {
+    padding: 5px 2px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .story {
+    padding: 33% 0 0 0;
+  }
+
+  .aboutus {
+    height: 480px;
+  }
+
+  .nhuong-quyen {
+    height: 460px;
+  }
+
+  .nhuong-quyen img:last-child {
+    width: 100%;
+  }
+
+  .news-promotions {
+    margin-top: 30px;
+  }
+
+  .news-promotions-title img {
+    width: 40%;
+  }
+
+  .phase-title h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .news {
+    flex-direction: row;
+    max-width: 750px;
+    margin: 30px auto;
+  }
+
+  .view-post {
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  .video-item:first-child .video-title {
+    bottom: 0px;
+    font-size: 12px;
+  }
+
+  .video-bg-img {
+    width: 100%;
+  }
+
+  .video-item .video-title {
+    font-size: 15px;
+  }
+
+  .video-bg-img span {
+    font-size: 20px;
+  }
+
+  .left-ft img {
+    width: 80%;
+    margin-top: 20px;
+  }
+
+  .center-ft,
+  .right-ft {
+    padding: 40px 0px;
+    margin: 0 auto;
+  }
+
+  footer .title-ft {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .center-ft img {
+    width: 33%;
+  }
+
+  .center-ft .media-icon {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .right-ft-content {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .ft-aboutus,
+  .ft-policies {
+    padding: 0 10px;
+    width: 50%;
+  }
+
+  .bottom-ft {
+    height: fit-content;
+  }
+
+  .bottom-ft .left {
+    padding: 10px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  header .logo {
+    width: 150px;
+    margin-left: 5px;
+  }
+
+  header nav {
+    background-color: #282828;
+  }
+
+  nav .header-nav {
+    padding: 0 20px;
+  }
+
+  header .btn-search {
+    margin: 0 auto;
+  }
+
+  .carousel {
+    padding-right: 0;
+  }
+
+  .product-list {
+    display: flex;
+    row-gap: 24px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .product-item {
+    width: 46%;
+  }
+
+  .aboutus {
+    height: 360px;
+  }
+
+  .story {
+    padding: 4% 0 0 0;
+  }
+
+  .story img {
+    width: 80%;
+  }
+
+  .nhuong-quyen {
+    height: fit-content;
+    margin-bottom: 30px;
+  }
+
+  .nhuong-quyen img:last-child {
+    display: none;
+  }
+}
+
+@media (min-width: 400px) and (max-width: 575.9px) {
+  header .logo {
+    width: 150px;
+    margin-left: 5px;
+  }
+
+  header nav {
+    background-color: #282828;
+  }
+
+  nav .header-nav {
+    padding: 0 20px;
+  }
+
+  header .btn-search {
+    margin: 0 auto;
+  }
+
+  .hot-products {
+    height: fit-content;
+  }
+
+  .hot-products-title {
+    height: fit-content;
+    margin: 50px 0 30px;
+  }
+
+  .hot-products-title img {
+    width: 80%;
+  }
+
+  .phase-title .phase-name {
+    font-size: 20px;
+  }
+
+  .product-list {
+    display: flex;
+    row-gap: 24px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .product-item {
+    width: 46%;
+  }
+
+  .product-item .new-label {
+    padding: 5px 2px;
+    top: 10px;
+    left: 10px;
+  }
+
+  .product-item .discount-label {
+    padding: 5px 2px;
+    top: 10px;
+    right: 10px;
+  }
+
+  .aboutus,
+  .nhuong-quyen {
+    display: none;
+  }
+
+  .news-promotions {
+    margin-top: 0px;
+  }
+
+  .news-promotions-title img {
+    width: 80%;
+  }
+
+  .phase-title h2 {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .news {
+    flex-direction: column;
+  }
+
+  .post {
+    width: 100%;
+  }
+
+  .view-post {
+    margin: 0 auto;
+  }
+
+  .video {
+    width: 100%;
+  }
+
+  .video-item:first-child .video-title {
+    bottom: 0px;
+    font-size: 18px;
+  }
+
+  .video-bg-img {
+    width: 100%;
+  }
+
+  .video-item .video-title {
+    font-size: 22px;
+  }
+
+  .video-bg-img span {
+    font-size: 20px;
+  }
+
+  .top-ft {
+    flex-direction: column;
+  }
+
+  .left-ft img {
+    width: 30%;
+    margin-top: 20px;
+  }
+
+  .center-ft,
+  .right-ft {
+    padding: 40px 0px;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  footer .title-ft {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .center-ft img {
+    width: 33%;
+  }
+
+  .center-ft .media-icon {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .right-ft-content {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .ft-aboutus,
+  .ft-policies {
+    padding: 0 10px;
+    width: 50%;
+  }
+
+  .bottom-ft {
+    height: fit-content;
+  }
+
+  .bottom-ft .left {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 399.9px) {
+  header.row > * {
+    padding-right: 0;
+  }
+
+  .product-list {
+    display: flex;
+    row-gap: 24px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+  }
+
+  .product-item {
+    width: 46%;
+  }
+
+  .carousel {
+    padding-right: 0;
+  }
+
+  nav {
+    padding: 0 10px;
+  }
+
+  .aboutus,
+  .nhuong-quyen {
+    display: none;
+  }
+
+  .news-promotions-title h2 {
+    padding: 0 20px;
+  }
+
+  .video-item:first-child .video-title {
+    font-size: 11px;
+  }
+
+  .video-item .video-title {
+    font-size: 14px;
+  }
+
+  .right-ft-content {
+    flex-direction: column;
+  }
+
+  .center-ft,
+  .right-ft {
+    padding: 20px 0px;
+  }
+
+  .ft-aboutus,
+  .ft-policies {
+    padding: 0 10px;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  .bottom-ft {
+    flex-direction: column;
+    font-size: 14px;
+    text-align: center;
+  }
+}
