@@ -137,3 +137,15 @@ body {
 .back-to-home a {
   text-decoration: none;
 }
+
+/* responsive */
+
+@media (max-width: 767.9px) {
+  .login-form-modal {
+    width: 400px;
+  }
+
+  form > div.re-pass-cover {
+    margin-bottom: 22px;
+  }
+}

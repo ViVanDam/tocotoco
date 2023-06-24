@@ -88,6 +88,7 @@ $(document).ready(function () {
               toppingPrice = toppingPrice * 1000;
               totalToppingPrice += toppingPrice;
               orderPrice += toppingPrice;
+              $(".order .order-price").text(orderPrice.toLocaleString());
             } else {
               // Nếu chưa đc chọn
               var toppingPrice =
@@ -98,6 +99,7 @@ $(document).ready(function () {
               toppingPrice = toppingPrice * 1000;
               totalToppingPrice -= toppingPrice;
               orderPrice -= toppingPrice;
+              $(".order .order-price").text(orderPrice.toLocaleString());
             }
           });
         }
@@ -132,7 +134,7 @@ $(document).ready(function () {
           for (var i = 0; i < toppings.length; i++) {
             // check which input is checked
             if (toppings[i].checked) {
-              // add value of radio is checked into radioValues
+              // add value of checckbox is checked into toppingText
               toppingText = toppingText + toppings[i].value + ", ";
             }
           }
@@ -206,6 +208,14 @@ $(document).ready(function () {
           $(totalCartQuantity).text(totalQuantity);
           $(totalCartPrice).text(totalPrice.toLocaleString());
           handleCart(orderProducts);
+
+          var toppings = document.querySelectorAll(
+            '.choise input[type="checkbox"]:checked'
+          );
+
+          toppings.forEach((topping) => {
+            $(topping).prop("checked", false);
+          });
         });
       });
 
@@ -213,8 +223,8 @@ $(document).ready(function () {
       var closeBtn = $(".order-modal .modal-content #cls");
       $(closeBtn).click(function (e) {
         $(modal).css("display", "none");
-        $(modalQuantity).val(1);
-        var toppings = modal.querySelectorAll(
+        $(".order-quantity .quantity").val(1);
+        var toppings = document.querySelectorAll(
           '.choise input[type="checkbox"]:checked'
         );
 

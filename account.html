@@ -55,7 +55,7 @@
   </head>
   <body>
     <div class="container-fluid wrapper-header">
-      <header>
+      <header class="default-header">
         <img class="logo" src="./img/logo/Logo-ngang-01.png" alt="" />
         <div class="search-box">
           <span class="material-symbols-outlined"> search </span>
@@ -71,8 +71,16 @@
           <img src="img/logo/logo_icon.png" alt="" class="acc-logo" />
         </div>
       </header>
+      <header class="responsive-header">
+        <div class="back-btn">
+          <span class="material-symbols-outlined"> arrow_back </span>
+        </div>
+        <div class="title-header">
+          <h4>Tài khoản</h4>
+        </div>
+      </header>
       <div class="container mt-md-3 d-flex mb-md-4">
-        <div class="categories col col-md-3">
+        <div class="categories col col-md-3 d-none d-lg-block">
           <ul class="list-group category-list">
             <li class="list-group-item">
               <a id="home-btn" href="products.html"
@@ -173,6 +181,53 @@
           <div class="my-order content-item" id="dhct"></div>
           <div class="discount content-item" id="mkm"></div>
         </div>
+      </div>
+      <div class="categories-btn col col-sm-3">
+        <div class="btn-cate-menu">
+          <span
+            class="material-symbols-outlined btn-menu"
+            style="color: #d2a451"
+          >
+            menu
+          </span>
+          <span class="material-symbols-outlined x-btn" style="color: #d2a451">
+            close
+          </span>
+        </div>
+        <ul class="list-group category-list">
+          <li class="list-group-item">
+            <a id="home-btn" href="products.html"
+              ><span class="material-symbols-outlined"> home </span> Trang
+              chủ</a
+            >
+          </li>
+          <li class="list-group-item content-active">
+            <a href="#ttct"
+              ><span class="material-symbols-outlined"> person </span> Thông tin
+              của tôi</a
+            >
+          </li>
+          <li class="list-group-item">
+            <a href="#dhct"
+              ><span class="material-symbols-outlined"> shopping_bag </span> Đơn
+              hàng của tôi</a
+            >
+          </li>
+          <li class="list-group-item">
+            <a href="#mkm"
+              ><span class="material-symbols-outlined">
+                confirmation_number
+              </span>
+              Mã khuyễn mãi</a
+            >
+          </li>
+          <li class="list-group-item">
+            <a id="logout" href="logout"
+              ><span class="material-symbols-outlined"> logout </span> Đăng
+              xuất</a
+            >
+          </li>
+        </ul>
       </div>
     </div>
   </body>

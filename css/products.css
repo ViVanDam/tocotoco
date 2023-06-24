@@ -505,6 +505,8 @@ header {
   margin-right: 10px;
 }
 
+/* ------------responsive------ */
+
 @media (max-width: 767.9px) {
   .categories {
     display: none;
