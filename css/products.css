@@ -615,6 +615,13 @@ header {
   }
 }
 
+@media (max-width: 399.9px) {
+  .product-btn {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+}
+
 @media (min-width: 768px) {
   .search-box {
     flex-grow: 0 !important;
